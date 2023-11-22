@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+.error {
+    color: red;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #F5FEFF;
+    border: 0.1px solid #F5FEFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 20px;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+
+  
+/* Button styles */
+.btn {
+    padding: 10px 20px;
+    background-color: #F89F73;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+
+  /* Button hover effect */
+  .btn:hover {
+    background-color: #10A3B4;
+  }
