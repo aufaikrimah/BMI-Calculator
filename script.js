@@ -20,6 +20,7 @@ function validateHeight() {
     }
 }
 
+
 function calculateBMI() {
     let weightInput = document.getElementById("weight");
     let heightInput = document.getElementById("height");
@@ -30,46 +31,48 @@ function calculateBMI() {
     let height = parseFloat(heightInput.value);
 
     if (!isNaN(weight) && !isNaN(height) && weight >= 10 && height >= 100) {
-        // Menghitung BMI
+
         let bmi = weight / Math.pow(height / 100, 2);
 
-        // Menentukan kategori BMI
         let category = "";
+
+        let imagePath = "";
+
         if (bmi < 18.5) {
-            category = "Underweight";
+            category = "Oh no, you seem to be underweight:(";
+            imagePath = "./img/underweight.png";
         } else if (bmi >= 18.5 && bmi <= 24.9) {
-            category = "Normal";
+            category = "Yay, your weight is within the normal range!!";
+            imagePath = "./img/normal.png";
         } else if (bmi >= 25 && bmi <= 29.9) {
-            category = "Overweight";
+            category = "Wow, it looks like you might be overweight!!";
+            imagePath = "./img/overweight.png";
         } else {
-            category = "Obesity";
+            category = "Woops, it seems like you might have obesity:(";
+            imagePath = "./img/obesity.png";
         }
 
-        // Menampilkan hasil pada modal
-        let modal = document.getElementById("result-modal");
-        modal.innerHTML = "<span style='color: #10A3B4;'>Your BMI is </span><br><br>" +
-                          "<span style='color: #F89F73; font-size:50px;'>" + bmi.toFixed(1) + "</span><br>" +
-                          "<br><span style='color: #10A3B4;'>which means you are </span>" +
-                          "<span style='color:#F89F73;'>" + category + "</span><br><br>";
+        let modal = document.getElementById("messageModal");
+        modal.innerHTML = "<strong style='color: #10A3B4; font-size:1.2rem;'><img src='" + imagePath + "' alt='BMI Icon'><br><br>" + category + "</strong><br><br><br>" +
+                         "<span style='color: #10A3B4; font-size:1rem;'>Your BMI : </span><br>" +
+                          "<strong style='color: #F89F73; font-size:3rem;'>" + bmi.toFixed(1) + "</strong><br>" ;
         
-        // Create and append the close button
-        let closeButton = document.createElement("button");
-        closeButton.className = "btn";
-        closeButton.textContent = "Re-Calculate";
-        closeButton.onclick = closeModal;
-        modal.appendChild(closeButton);
-
-        modal.style.display = "block";
-
-        // Menghapus pesan kesalahan jika ada
         weightError.innerHTML = "";
         heightError.innerHTML = "";
+
+        var modalElement = new bootstrap.Modal(document.getElementById('exampleModal'));
+        modalElement.show();
+
     } else {
         weightError.innerHTML = "Enter a weight with at least 2 digits, and the first digit should not be zero (0)";
         heightError.innerHTML = "Enter a height with at least 3 digits, and the first digit should not be zero (0)";
     }
 }
 
-function closeModal() {
-    document.getElementById("result-modal").style.display = "none";
+function clearFormAndCloseModal() {
+
+    document.getElementById("bmiForm").reset();
+
+    var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+    modal.hide();
 }

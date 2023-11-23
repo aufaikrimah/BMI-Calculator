@@ -1,28 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="script.js"></script>
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>BMI Calculator</title>
 </head>
+
 <body>
-    <h2>BMI Calculator</h2>
-    <form id="bmiForm">
-        <input type="number" id="weight" min="10" required oninput="validateWeight()" placeholder="Put your weight in here (KG)"><br>
-        <div id="weight-error" class="error"></div>
+    <div class="container">
 
-        <input type="number" id="height" min="100" required oninput="validateHeight()" placeholder="Put your height in here (CM)"><br>
-        <div id="height-error" class="error"></div>
+        <div class="row">
 
-        <button type="button" onclick="calculateBMI()">Calculate BMI</button>
-    </form>
+            <div class="column-e">
+                <div class="">
+                    <h1 class="title"><span style="color: #F89F73;">BMI</span> <span style="color: #10A3B4;">Calculator</span></h1>
+                    <h1 style="color: #10A3B4;">(Body Mass Index)</h1>
+                    <p style="color: #10A3B4;">"The BMI Calculator is a tool designed to determine whether your weight falls within the recommended range for individuals aged 20 and above. This calculator provides information on whether your body mass index falls within the ideal category or not."</p>
+                    <div class="icon">
+                        <div class="ico"><img src="./img/github.png" alt="githubaufa" class="github"> aufaikrimah</div>
+                        <div class="ico"><img src="./img/pi23.png" alt="pi23" class="pi23"> Perempuan Inovasi 2023</div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="column">
+                <div class="card" style="background-color: #F5FEFF;">
+                    <form id="bmiForm" col-sm-12>
+                        <h2 style="color: #10A3B4;">Check Your BMI</h2>
 
-    <div id="result-modal" class="modal" onclick="closeModal()">
-     
-      </div>
+                        <div class="form-floating mb-3 ">
+                            <input type="number" class="form-control" id="weight" min="10" required oninput="validateWeight()" placeholder="">
+                            <label for="floatingInput">Put your weight in here (KG)</label>
+                            <div id="weight-error" class="error"></div>
+                        </div>
+                        <div class="form-floating mb-5">
+                            <input type="number" class="form-control" id="height" min="100" required oninput="validateHeight()" placeholder="">
+                            <label for="floatingPassword">Put your height in here (CM)</label>
+                            <div id="height-error" class="error"></div>
+                        </div>
+                        <button type="button" class="btn-bd-primary" data-bs-toggle="modal" onclick="calculateBMI()">
+                            Calculate BMI
+                        </button>
   
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-body" id="messageModal">
+                                        
+                                    </div>
+                                    <div id="messageModalDefault"></div>
+                                    <div class="modal-footer">
+                                        <button type="button" id="closeModalButton" class="btn-bd-primary" data-bs-dismiss="modal" onclick="clearFormAndCloseModal()"><img src="./img/load.png"> Re-Calculate</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        
+        </div>
+        
+    </div>
+   
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+      
 </body>
+
 </html>
