@@ -60,7 +60,7 @@ function calculateBMI() {
         weightError.innerHTML = "";
         heightError.innerHTML = "";
 
-        var modalElement = new bootstrap.Modal(document.getElementById('exampleModal'));
+        let modalElement = new bootstrap.Modal(document.getElementById('okModal'));
         modalElement.show();
 
     } else {
@@ -73,6 +73,6 @@ function clearFormAndCloseModal() {
 
     document.getElementById("bmiForm").reset();
 
-    var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+    let modal = new bootstrap.Modal(document.getElementById('okModal'));
     modal.hide();
 }

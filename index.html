@@ -23,7 +23,8 @@
                 <div class="">
                     <h1 class="title"><span style="color: #F89F73;">BMI</span> <span style="color: #10A3B4;">Calculator</span></h1>
                     <h1 style="color: #10A3B4;">(Body Mass Index)</h1>
-                    <p style="color: #10A3B4;">"The BMI Calculator is a tool designed to determine whether your weight falls within the recommended range for individuals aged 20 and above. This calculator provides information on whether your body mass index falls within the ideal category or not."</p>
+                    <p style="color: #10A3B4;">"The BMI Calculator is a tool designed to determine whether your weight falls within the recommended range for individuals aged 20 and above. 
+                        This calculator provides information on whether your body mass index falls within the ideal category or not."</p>
                     <div class="icon">
                         <div class="ico"><img src="./img/github.png" alt="githubaufa" class="github"> aufaikrimah</div>
                         <div class="ico"><img src="./img/pi23.png" alt="pi23" class="pi23"> Perempuan Inovasi 2023</div>
@@ -46,20 +47,22 @@
                             <label for="floatingPassword">Put your height in here (CM)</label>
                             <div id="height-error" class="error"></div>
                         </div>
+
                         <button type="button" class="btn-bd-primary" data-bs-toggle="modal" onclick="calculateBMI()">
                             Calculate BMI
                         </button>
   
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="okModal" tabindex="-1" aria-labelledby="okModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-body" id="messageModal">
-                                        
                                     </div>
                                     <div id="messageModalDefault"></div>
                                     <div class="modal-footer">
-                                        <button type="button" id="closeModalButton" class="btn-bd-primary" data-bs-dismiss="modal" onclick="clearFormAndCloseModal()"><img src="./img/load.png"> Re-Calculate</button>
+                                        <button type="button" id="closeModalButton" class="btn-bd-primary" data-bs-dismiss="modal" onclick="clearFormAndCloseModal()" style="font-size: 1rem;">
+                                            <img src="./img/load.png"> Re-Calculate
+                                        </button>
                                     </div>
                                 </div>
                             </div>
