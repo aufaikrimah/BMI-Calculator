@@ -84,7 +84,7 @@ body {
     width: 30vw;
     align-items: center;
     align-content: center;
-  }
+}
 
 form {
     padding: 10% 0 0 0;
@@ -119,12 +119,12 @@ form h2 {
 
 @media only screen and (max-width: 1400px) {
 
-    * {
-        font-size: 97%;
-    }
-
     .ico .pi23 {
         margin: 0 5% 0 13%;
+    }
+
+    .icon{
+        font-size: 97%;
     }
 
     form {
@@ -148,8 +148,12 @@ form h2 {
 
 @media only screen and (max-width: 1200px) {
 
-    * {
+    /* * {
         font-size: 95%;
+    } */
+
+    .icon{
+        font-size: 80%;
     }
 
     .error {
@@ -161,15 +165,20 @@ form h2 {
 @media only screen and (max-width: 992px) {
 
     * {
-        font-size: 91%;
+        font-size: 97%;
     }
 
-    
+    .icon{
+        font-size: 60%;
+    }
 }
 
-@media only screen and (max-width: 764px) {
+@media only screen and (max-width: 790px) {
+    * {
+        font-size: 96%;
+    }
     .container {
-        margin-top: 30%;
+        margin-top: 35%;
     }
 
     .row {
@@ -191,7 +200,7 @@ form h2 {
     }
 
     .card {
-        width: 100%;
+        width: 90%;
         height: 100%;
     }
 
@@ -215,7 +224,7 @@ form h2 {
     form {
         padding: 10% 0;
         width: 80%;
-        height: 25rem;
+        height: 27rem;
     }
 
     form h2 {
@@ -228,6 +237,6 @@ form h2 {
       }
 
     .error {
-        font-size: 0.5rem;
+        font-size: 0.6rem;
     }
 }
