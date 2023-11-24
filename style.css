@@ -148,10 +148,6 @@ form h2 {
 
 @media only screen and (max-width: 1200px) {
 
-    /* * {
-        font-size: 95%;
-    } */
-
     .icon{
         font-size: 80%;
     }
@@ -174,11 +170,20 @@ form h2 {
 }
 
 @media only screen and (max-width: 790px) {
+    
     * {
         font-size: 96%;
     }
+
+    body {
+        background-position: right;
+        background-size: cover;
+        background-repeat: repeat-y;
+
+    }
+
     .container {
-        margin-top: 35%;
+        margin: 0;
     }
 
     .row {
@@ -211,6 +216,7 @@ form h2 {
         width: 90%;
         margin: 10% 10% 0 10%;
         padding: 0;
+        font-size: 80%;
     }
 
     .ico .pi23 {
