@@ -39,23 +39,28 @@ function calculateBMI() {
         let imagePath = "";
 
         if (bmi < 18.5) {
-            category = "Oh no, you seem to be underweight:(";
+            category = "Oh no, you seem to be underweight :(";
             imagePath = "./img/underweight.png";
         } else if (bmi >= 18.5 && bmi <= 24.9) {
-            category = "Yay, your weight is within the normal range!!";
+            category = "Yay, your weight is within the normal range :)";
             imagePath = "./img/normal.png";
         } else if (bmi >= 25 && bmi <= 29.9) {
             category = "Wow, it looks like you might be overweight!!";
             imagePath = "./img/overweight.png";
         } else {
-            category = "Woops, it seems like you might have obesity:(";
+            category = "Woops, it seems like you might have obesity :(";
             imagePath = "./img/obesity.png";
         }
 
         let modal = document.getElementById("messageModal");
-        modal.innerHTML = "<strong style='color: #10A3B4; font-size:1.2rem;'><img src='" + imagePath + "' alt='BMI Icon'><br><br>" + category + "</strong><br><br><br>" +
-                         "<span style='color: #10A3B4; font-size:1rem;'>Your BMI : </span><br>" +
-                          "<strong style='color: #F89F73; font-size:3rem;'>" + bmi.toFixed(1) + "</strong><br>" ;
+        modal.innerHTML = "<strong style='color: #10A3B4; font-size:1.2rem;'><img src='" + imagePath + "' alt='BMI Icon' style='height: 10rem'><br><br>" + category + "</strong><br><br><br>" +
+                         "<span style='color: #10A3B4; font-size:1rem;'>Your BMI is : </span><br>" +
+                          "<strong style='color: #F89F73; font-size:3rem;'>" + bmi.toFixed(1) + "</strong><br><br>" +
+                          "<span style='color: #10A3B4; font-size:0.6rem;'>BMI Categories : </span><br>" +
+                          "<span style='color: #10A3B4; font-size:0.6rem;'> Underweight : BMI < 18.5 </span>" + 
+                          "<span style='color: #10A3B4; font-size:0.6rem;'> ---------- Normal weight : BMI 18.5 – 24.9</span><br>" +
+                          "<span style='color: #10A3B4; font-size:0.6rem;'> Overweight : BMI 25 – 29.9</span>" + 
+                          "<span style='color: #10A3B4; font-size:0.6rem;'> ------------ Obesity : BMI of 30 or greater</span><br>" ;
         
         weightError.innerHTML = "";
         heightError.innerHTML = "";
